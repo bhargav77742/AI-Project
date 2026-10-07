@@ -1,0 +1,183 @@
+--- Page 1 ---
+Faculty of Technology 
+University of Sunderland 
+ 
+CET313 Artificial Intelligence – Dr Basel Barakat 
+Artificial Intelligence - Logic 
+Introduction 
+We have looked at some of the logic mechanisms used in AI in our lecture, now let’s see if we can look 
+at some examples of this in the code.  
+Python has a lot of libraries, but not all of them are installed with Anaconda, so from time to time you 
+are going to need to add li braries to your python coding environment and this can sometimes prove 
+to be challenging. Luckily the code we are going to look at this week relies on some obscure libraries 
+that are not always easy to install, so I got to experience some real pain on your  behalf setting them 
+up – I will of course let you know the fix, so you don’t have to go through that stress. 
+We need to install 2 libraries, these are:  
+1. sympy 
+2. minikanren 
+To install you would use pip which is a python installation package. 
+ 
+To install them you need to type: 
+1. !pip install sympy 
+2. !pip install minikanren 
+ 
+ 
+ 
+ 
+Once this is done successfully you should have all you need to start working on todays examples. We 
+are going to work on two similar examples today, the first will look at family relationships and how we 
+would input these for interrogation in Python. The other will look at states and geography. We will get 
+our first look at interacting with external files of differing types and begin to see how we help the 
+computer to see things as we do. 
+
+
+--- Page 2 ---
+Faculty of Technology 
+University of Sunderland 
+ 
+CET313 Artificial Intelligence – Dr Basel Barakat 
+Exercise 1 
+For the first example you need to download the JSON file relationships.json from Canvas and save it 
+into your AI folder, then run Anaconda and create a new file in Jupyter notebook in the same folder.  
+Rename this file to family and type the following: 
+ 
+ 
+ 
+This will set the imports needed for us to run queries on the information in our file.  
+ 
+Next we will define some rules for relationships: 
+ 
+ 
+These functions define four relationships between two people: parent, grandparent, 
+sibling, and uncle. 
+The parent() function returns True if x is the parent of y, and False otherwise. It 
+does this by checking if either the father() or mother() predicate is true. 
+The grandparent() function returns True if x is the grandparent of y, and False 
+otherwise. It does this by first creating a new variable, temp. It then checks if x is the 
+parent of temp and if temp is the parent of y. If both of these conditions are true, then 
+the function returns True. Otherwise, it returns False. 
+The sibling() function returns True if x and y are siblings, and False otherwise. It 
+does this by first creating a new variable, temp. It then checks if x and y are both the 
+
+
+--- Page 3 ---
+Faculty of Technology 
+University of Sunderland 
+ 
+CET313 Artificial Intelligence – Dr Basel Barakat 
+parents of temp. If this condition is true, then the function returns True. Otherwise, it 
+returns False. 
+The uncle() function returns True if x is the uncle of y, and False otherwise. It does 
+this by first creating a new variable, temp. It then checks if temp is the parent of x and 
+if temp is the grandparent of y. If both of these conditions are true, then the function 
+returns True. Otherwise, it returns False. 
+ 
+Next we access our file and set parental relationships: 
+ 
+ 
+ 
+With that now setup, we can run a set of further queries on the information using the relationships 
+we defined earlier in the code. 
+ 
+ 
+ 
+ 
+
+
+--- Page 4 ---
+Faculty of Technology 
+University of Sunderland 
+ 
+CET313 Artificial Intelligence – Dr Basel Barakat 
+ 
+ 
+ 
+ 
+You can run your program now to check that all is as it should be, but there are more queries below 
+for you to run which will test all the definitions and relationships we have set. 
+ 
+ 
+Question 1: write a script to find Davids siblings 
+Question 2:  write a script to find Tiffany’s uncles 
+Question 3: write a script to find all spouses 
+ 
+ 
+You should be able to see working outputs when you run your code. Try editing the json file and 
+adding more defined relationships to your code. Upload any extension work to your ePortfolio. 
+ 
+Exercise 2 
+For this example, you will need to download the 2 text files from Canvas, adjacent_states.txt and 
+coastal_states.txt, save them into AI folder , then run Anaconda and open a new file in Jupyter 
+notebook.  Rename this file to states and type the following import command: 
+ 
+This will set the imports needed for us to run queries on the information in our file.  
+Then add: 
+
+
+--- Page 5 ---
+Faculty of Technology 
+University of Sunderland 
+ 
+CET313 Artificial Intelligence – Dr Basel Barakat 
+  
+To define the relationships. 
+Next, we specify our files: 
+  
+
+
+--- Page 6 ---
+Faculty of Technology 
+University of Sunderland 
+ 
+CET313 Artificial Intelligence – Dr Basel Barakat 
+Then we read the file contents and add the information they contain to the fact base for our 
+program: 
+ 
+  
+Now we can initialise the variables we need to be able to perform some queries: 
+ 
+ 
+ 
+We are finally ready to run some queries on our data – try the following: 
+Example 1: # Is Nevada adjacent to Louisiana? 
+ 
+ 
+  
+
+
+--- Page 7 ---
+Faculty of Technology 
+University of Sunderland 
+ 
+CET313 Artificial Intelligence – Dr Basel Barakat 
+Example 2: States adjacent to Oregon 
+ 
+ 
+Example 3: States adjacent to Mississippi that are coastal 
+ 
+ 
+ 
+ 
+  
+
+
+--- Page 8 ---
+Faculty of Technology 
+University of Sunderland 
+ 
+CET313 Artificial Intelligence – Dr Basel Barakat 
+Example 4: List of 'n' states that border a coastal state 
+ 
+ 
+ 
+Example 5: List of states that adjacent to the two given states 
+ 
+ 
+ 
+You should be able to see working outputs when you run your code.  
+Question 1: Try adding more queries to your code.  
+Upload any extension work to your ePortfolio. 
+ 
+ 
+
+
